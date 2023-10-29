@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "21-lesson-hw"
+version = "0.1.0"
+description = ""
+authors = ["NastyaGavrichenkova <lady_markos@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pytest = "^7.4.2"
+appium-python-client = "^3.1.0"
+selene = "^2.0.0rc4"
+allure-pytest = "^2.13.2"
+pydantic = "^2.4.2"
+pydantic-settings = "^2.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
