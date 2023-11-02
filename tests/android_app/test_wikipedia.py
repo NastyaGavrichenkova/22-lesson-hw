@@ -9,15 +9,20 @@ from data import onboarding
 def test_run_onboarding():
     page_number = 1
 
-    with allure.step(f'Verify content on the {page_number} screen'):
-        text = browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView'))
+    while page_number <= 4:
 
-        text.should(have.text(onboarding.text_on_page[page_number]))
+        with allure.step(f'Verify content on the {page_number} screen'):
+            text = browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView'))
 
-        page_number += 1
+            text.should(have.text(onboarding.text_on_page[page_number]))
 
-    with allure.step(f'Open the {page_number} onboarding screen'):
-        browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/fragment_onboarding_forward_button')).click()
+            if page_number == 4:
+                break
+
+            page_number += 1
+
+        with allure.step(f'Open the {page_number} onboarding screen'):
+            browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/fragment_onboarding_forward_button')).click()
 
 
 def test_search():
