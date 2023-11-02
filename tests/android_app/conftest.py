@@ -35,4 +35,4 @@ def mobile_management():
     browser.quit()
 
     if app_config.runs_on_bstack():
-        utils.allure.attach_bstack_video(session_id)
+        utils.allure.attach_bstack_video(session_id, app_config.bstack_userName, app_config.bstack_accessKey)
