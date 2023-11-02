@@ -1,7 +1,11 @@
 import allure
 import requests
+import utils
 
-from config import app_config
+from config import AppConfig
+
+
+app_config = AppConfig(_env_file=utils.file.abs_path_to_file(f'.env.{AppConfig().context}'))
 
 
 def attach_bstack_video(session_id):

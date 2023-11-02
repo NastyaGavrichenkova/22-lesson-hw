@@ -5,7 +5,9 @@ from selene import browser, support
 import allure_commons
 import utils
 
-from config import app_config
+from config import AppConfig
+
+app_config = AppConfig(_env_file=utils.file.abs_path_to_file(f'.env.{AppConfig().context}'))
 
 
 @pytest.fixture(scope='function', autouse=True)
